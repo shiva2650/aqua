@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-aqua-primary: #0ea5e9;
+  --color-aqua-secondary: #06b6d4;
+  --color-aqua-dark: #0f172a;
+  --color-aqua-deep: #020617;
+  --color-aqua-glow: rgba(56, 189, 248, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-aqua-deep text-slate-50 selection:bg-aqua-primary/30 antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.glass {
+  @apply bg-aqua-dark/60 backdrop-blur-xl border border-aqua-primary/20 rounded-3xl shadow-xl transition-all duration-300;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
